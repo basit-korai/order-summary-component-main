@@ -30,22 +30,33 @@ body {
   font-size: 1.6rem;
   font-family: "Red Hat Display", sans-serif;
   font-weight: var(--fw-regular);
+
   background: url("./images/pattern-background-mobile.svg");
+  background-size: 100% 50vmin;
   background-repeat: no-repeat;
-  background-size: 100%;
   background-color: var(--clr-secondary);
   text-align: center;
+
   display: grid;
-  min-height: 100vh;
   place-items: center;
+
+  padding: 0 1em;
 }
 
 .container {
-  /* width: 45%; */
-  max-width: 330px;
-  margin: 7em auto;
+  max-width: 340px;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  margin: 10em auto;
   border-radius: 20px;
   background-color: #ffffff;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hero__img {
@@ -70,14 +81,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-/* .purchasing__details, img, .purchasing__plan {
-    border:hsl(223, 47%, 23%) 1px solid;
-} */
-
 .purchasing__details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 7em 6em;
   margin: 0.8em auto;
   min-width: 90%;
@@ -109,7 +113,6 @@ body {
   color: var(--clr-primary);
   margin-left: 30px;
   transition-duration: 500ms;
-
 }
 
 .change__plan:hover {
@@ -125,12 +128,11 @@ body {
   border-radius: 10px;
   background: var(--clr-primary);
   color: #ffffff;
-  box-shadow: 0px 15px 60px -20px #111;
+  box-shadow: 0px 15px 60px -20px #000000;
   width: 90%;
   margin: 0 auto;
   margin-top: 0.7em;
   padding: 1.2em 4em;
-
   transition-duration: 500ms;
 }
 
@@ -151,13 +153,46 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 280px) {
+  body {
+    padding: 0 1em;
+  }
+
+  .container {
+    max-width: 330px;
+    margin: 7em auto;
+
+    padding-bottom: 1em;
+    border-radius: 20px;
+    background-color: #ffffff;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+  }
+
+  .change__plan {
+    margin-left: 0px;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.5em 2em;
+  }
+
+  .btn-hover {
+    background: lime;
+  }
+}
+
 @media (min-width: 760px) {
   body {
     background: url("./images/pattern-background-desktop.svg");
+    background-size: 100% 50vmin;
     background-repeat: no-repeat;
-    background-size: 100%;
     background-color: var(--clr-secondary);
-
   }
 
   .container {
